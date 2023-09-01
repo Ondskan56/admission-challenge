@@ -1,2 +1,56 @@
 #!/bin/bash
 #add fix to exercise5-server2 here
+ID_RSA=$(cat <<'EOF'
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
+EOF
+)
+
+ID_RSA_PUB="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyYn/67qihpo+Cx608vq8uztSIKs95lG4B95djWBW6e5Ljf+fx0Pt2QhfBxRUUWc2KhOwVbuxzNo2sgNivEqM83xELI+7CrgFoYuw6kI38wpKR11oWHOrucGXYk0EMepIu/IzNYMaGmTSb2sWzaWphOFerrxLqA6gmVCgbWD/p9NjXTdbaNkshQ+VPX13iSRWG23+hKsGIMxp75iCLoiVtXhzrLcYJB82Ib7ytznx3n24FS42gYoLACr7fYw6NWC/NYGBABsjU/5qbmRHWXwiTSyVOapDAUM3ch//4N4Q5A2g/wRZkV0cMnAtnLQ3XbjdQKYJXIsXVZ2NzZn/fGHYi/LywMliOZib2CmZiSLlE+eJw4JkbltxBDnircWiDvrbrkKq81lJxJ47rdjqPlLssYtKZQYMNzd+1h557WjDalVc21ZlXwxRbAsWKuWCHMl+GfmYRgHK+hFtmwxjP5j+fDIAOCRxDRatWylPW15AuOHOE7ucvL2tbnLkflzDuum8= vagrant@server1"
+
+sudo -- sh -c "echo 192.168.60.10 server1 >> /etc/hosts"
+sudo sed -i 's/^#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+echo "$ID_RSA" > /home/vagrant/.ssh/id_rsa
+echo "$ID_RSA_PUB" >> /home/vagrant/.ssh/authorized_keys
+chmod 700 /home/vagrant/.ssh
+chmod 600 /home/vagrant/.ssh/id_rsa
+chmod 600 /home/vagrant/.ssh/authorized_keys
+chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
+chown vagrant:vagrant /home/vagrant/.ssh
+#ssh -o StrictHostKeyChecking=no vagrant@server1
